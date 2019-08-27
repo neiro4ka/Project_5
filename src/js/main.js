@@ -8,7 +8,8 @@ let app = new Vue ({
 	data: {
 		catalogUrl: '/catalogData.json',
 		products: [],
-		imgCatalog: 'https://placehold.it/200x150'
+        imgCatalog: 'https://placehold.it/200x150',
+        visible: false
 	},
 	methods: {
 		getJSON (url) {
@@ -159,18 +160,18 @@ let app = new Vue ({
 // 		this.img = img
 // 	}
 // 	render () {
-		// return `<div class="product-item" data-id="${this.id_product}">
-        //                 <img src="${this.img}" alt="Some img">
-        //                 <div class="desc">
-        //                     <h3>${this.product_name}</h3>
-        //                     <p>${this.price} $</p>
-        //                     <button class="buy-btn" 
-        //                     data-name="${this.product_name}"
-        //                     data-image="${this.img}"
-		// 					data-price="${this.price}
-		// 					data-id="${this.id_product}">Купить</button>
-        //                 </div>
-        //             </div>`
+// 		return `<div class="product-item" data-id="${this.id_product}">
+//                         <img src="${this.img}" alt="Some img">
+//                         <div class="desc">
+//                             <h3>${this.product_name}</h3>
+//                             <p>${this.price} $</p>
+//                             <button class="buy-btn" 
+//                             data-name="${this.product_name}"
+//                             data-image="${this.img}"
+// 							data-price="${this.price}
+// 							data-id="${this.id_product}">Купить</button>
+//                         </div>
+//                     </div>`
 // 	}
 // }
 
@@ -179,7 +180,7 @@ let app = new Vue ({
 // }
 
 // class CartItem extends Item {
-// 	//+дополнительные корзинные штуки
+// 	+дополнительные корзинные штуки
 // 	constructor (el, img = 'https://placehold.it/50x100') {
 // 		super (el, img)
 // 		this.quantity = el.quantity
@@ -210,6 +211,3 @@ let app = new Vue ({
 
 // let cart = new Cart ()
 // let list = new ProductsList (cart)
-
-
-
