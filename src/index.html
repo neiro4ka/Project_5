@@ -8,28 +8,18 @@
     <div id="app">
         <header>
             <div class="logo">E-shop</div>
-            <div class="cart">
-                <form action="#" class="search-form">
-                    <input type="text" class="search-field">
+            <form action="#" class="search-form" @submit.prevent="filter(userSearch)">
+                    <input type="text" class="search-field" v-model="userSearch">
                     <button class="btn-search" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
-                </form>
-                <button class="btn-cart" type="button" @click="visible=!visible">Корзина</button>
-                <div class="cart-block" v-show="visible"></div>
+            </form>
+            <div class="cart">
+                <cart ref="cart"></cart>
             </div>
         </header>
         <main>
-            <div class="products">
-                <div class="product-item" data-id="${this.id_product}" v-for="product of products">
-                    <img :src="imgCatalog" alt="Some img">
-                    <div class="desc">
-                        <h3> {{ product.product_name }}</h3>
-                        <p>{{ product.price }} $</p>
-                        <button class="buy-btn" @click="addProduct (product)">Купить</button>
-                    </div>
-                </div>
-            </div>
+            <products ref="products"></products>
         </main>
     </div>
 
